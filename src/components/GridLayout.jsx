@@ -3,7 +3,7 @@ import HeroSection from './HeroSection';
 import ProjectsSection from './Projects';
 import TechStacks from './TechStacks';
 import Projects from './Projects';
-import Footer from './footer';
+import Footer from './Footer';
 
 export default function GridLayout() {
   const [scrollY, setScrollY] = useState(0);
