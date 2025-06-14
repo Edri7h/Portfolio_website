@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, ChevronDown, Menu, X } from 'lucide-react';
-import HeroSection from './components/HeroSection';
-import TechStacks from './components/TechStacks';
-import GridLayout from './components/GRidLayout';
+
+import GridLayout from './components/GridLayout';
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,8 +43,7 @@ export default function Portfolio() {
 
   return (
    <div>
-    {/* <HeroSection/>
-    <TechStacks/> */}
+   
     <GridLayout/>
 
    </div>
