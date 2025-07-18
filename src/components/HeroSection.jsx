@@ -3,7 +3,7 @@ import { Github, Linkedin } from 'lucide-react';
 
 export default function HeroComponent() {
   return (
-    <div className="flex flex-col mt-15 items-center justify-center min-h-screen px-6 text-center">
+    <div className="flex flex-col mt-12 items-center justify-center min-h-screen px-6 text-center">
         
         {/* Main Heading */}
         <div className="mb-8">
@@ -23,8 +23,7 @@ export default function HeroComponent() {
         
         {/* Description */}
         <p className="text-gray-300 text-lg md:text-xl lg:text-2xl max-w-5xl leading-relaxed mb-12 font-light">
-        I’m a software developer who loves building things — from solid backends to clean, responsive frontends. I enjoy solving problems and constantly exploring new tools to make better, faster, and more useful products.
-
+I’m a third-year B.Tech student and a self-taught developer. I’ve mostly learned by trial, error, and an unhealthy number of browser tabs. I like building things that actually work and sipping tea while pretending I have it all under control
 
         </p>
         
@@ -42,9 +41,7 @@ export default function HeroComponent() {
         </div>
         
         {/* CTA Button */}
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-12 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
-          View Resume
-        </button>
+        
         
       </div>
   );

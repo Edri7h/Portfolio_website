@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, ExternalLink, Users, Zap, Code } from 'lucide-react';
-import chatApp from "../assets/chatApp.png";
-import jobplatform from "../assets/jobplatform.png";
+
+
 
 // Icon mapping
 const iconMap = {
@@ -24,7 +24,7 @@ const projects = [
   {
     name: "ShoutOut",
     description: "ShoutOut is a simple real-time chat app built with Socket.IO for instant messaging between users.",
-    image: chatApp,
+    image: "https://i.ibb.co/4wXbKzFz/chatApp.png",
     github: "https://github.com/Edri7h/chat-app",
     live: "#",
     tech: ["Socket.io", "React", "Node.js"],
@@ -34,7 +34,7 @@ const projects = [
   {
     name: "GetHired",
     description: "GetHired is a MERN stack job portal where employers post jobs and seekers apply easily.",
-    image: jobplatform,
+    image: "https://i.ibb.co/m1Vf18q/jobplatform.png",
     github: "https://github.com/Edri7h/job-portal-gethired",
     live: "#",
     tech: ["React", "express.js", "MongoDB", "Restful API"],
