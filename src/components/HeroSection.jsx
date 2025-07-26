@@ -1,27 +1,12 @@
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
+import Navbar from './Navbar';
 // import {motion} from "motion/react"
 export default function HeroComponent() {
   return (
     <>
       {/* Sticky Light Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-white text-gray-800 z-50 border-b border-gray-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <span className="text-xl font-semibold">Ehtesham.dev</span>
-          <div className="flex gap-6 text-sm font-medium">
-            {['home', 'projects', 'tech', 'contact'].map((section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                className="relative text-gray-700 hover:text-black transition"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-gray-800 scale-x-0 hover:scale-x-100 transition-transform origin-left duration-300" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navbar/>
 
       {/* Hero Section */}
       <div
