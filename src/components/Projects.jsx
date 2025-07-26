@@ -1,25 +1,14 @@
 import React from 'react';
-import { Github, ExternalLink, Users, Zap, Code } from 'lucide-react';
-
-
-
-// Icon mapping
-const iconMap = {
-  users: <Users className="w-6 h-6 text-white" />,
-  zap: <Zap className="w-6 h-6 text-white" />,
-  code: <Code className="w-6 h-6 text-white" />,
-};
+import { Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     name: "Turf Booking App",
     description: "A platform for users to book turf slots while owners manage turfs, track bookings, and control everything from a central dashboard",
-    image: "https://i.ibb.co/RkKcNPtv/Screenshot-2025-07-18-101637.png", // fixed the URL from your previous input
+    image: "https://i.ibb.co/RkKcNPtv/Screenshot-2025-07-18-101637.png",
     github: "https://github.com/Edri7h/reserveMyTurf-client",
     live: "https://reserve-my-turf-client.vercel.app/",
     tech: ["React", "Node.js", "MongoDB", "TypeScript"],
-    color: "from-green-100 to-green-800",
-    icon: "code",
   },
   {
     name: "ShoutOut",
@@ -28,8 +17,6 @@ const projects = [
     github: "https://github.com/Edri7h/chat-app",
     live: "#",
     tech: ["Socket.io", "React", "Node.js"],
-    color: "from-purple-500 to-purple",
-    icon: "users",
   },
   {
     name: "GetHired",
@@ -38,65 +25,81 @@ const projects = [
     github: "https://github.com/Edri7h/job-portal-gethired",
     live: "#",
     tech: ["React", "express.js", "MongoDB", "Restful API"],
-    color: "from-blue-300 to-blue-400",
-    icon: "zap",
   },
-  
 ];
 
 const Projects = () => {
   return (
-    <section className="relative py-16 px-6 sm:px-8 lg:px-20 bg-transparent text-white">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-5xl font-extrabold">
-          <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-            Featured&nbsp;
-          </span>
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Projects
-          </span>
+    <section
+      id="projects"
+      className="relative py-20 px-6 sm:px-8 lg:px-20 bg-white font-mono text-gray-800 overflow-hidden"
+    >
+      {/* Leaky C++ background code */}
+      <pre className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] sm:text-sm md:text-base max-w-5xl text-black opacity-10 font-mono pointer-events-none select-none leading-relaxed whitespace-pre-wrap z-0">
+{`#include <iostream>
+#include <vector>
+using namespace std;
+
+class Project {
+public:
+    string name;
+    vector<string> tech;
+
+    Project(string n, vector<string> t) : name(n), tech(t) {}
+
+    void showTechStack() {
+        cout << "Project: " << name << "\\nStack: ";
+        for (string &t : tech) cout << t << " ";
+        cout << endl;
+    }
+};`}
+      </pre>
+
+      <div className="text-center mb-10 relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
+          Featured Projects<span className="text-gray-500">_</span>
         </h2>
       </div>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 relative z-10">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300"
+            className="rounded-xl border border-gray-200 bg-white shadow-md transition overflow-hidden"
           >
-            <div className="relative aspect-[16/9] overflow-hidden">
+            {/* Thumbnail */}
+            <div className="relative aspect-[16/9] overflow-hidden border-b border-gray-100">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-500"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-20`} />
-              <div className="absolute top-3 left-3 bg-black/50 rounded-md p-1">
-                {iconMap[project.icon]}
-              </div>
             </div>
 
-            <div className="p-6 lg:p-7">
-              <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
-              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+            {/* Content */}
+            <div className="p-6 space-y-4">
+              <h3 className="text-2xl font-semibold">{project.name}</h3>
+              <p className="text-gray-600 text-sm">{project.description}</p>
 
-              <div className="flex flex-wrap gap-2 mb-5">
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs px-2 py-1 bg-white/10 border border-white/20 rounded-md"
+                    className="text-xs px-2 py-1 border border-gray-300 rounded bg-gray-50 text-gray-700"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-3">
+              {/* Buttons */}
+              <div className="flex gap-3 mt-4">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 rounded-md transition"
+                  className="flex items-center gap-1 px-3 py-2 border border-gray-300 text-sm text-gray-700 hover:bg-gray-100 transition rounded"
                 >
                   <Github className="w-4 h-4" />
                   Code
@@ -105,7 +108,7 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-1 px-3 py-2 text-sm bg-gradient-to-r ${project.color} text-white rounded-md hover:shadow-lg transition`}
+                  className="flex items-center gap-1 px-3 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm rounded transition"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Demo
